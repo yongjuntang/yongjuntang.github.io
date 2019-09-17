@@ -1,0 +1,2 @@
+theme: jekyll-theme-architect
+gem "github-pages", group: :jekyll_plugins
