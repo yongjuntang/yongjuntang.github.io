@@ -49,6 +49,7 @@ var ch  = make(chan int,2)
     
     a<-2 //写入数据
     time.Sleep(1*time.Second) //等待子goroutine执行完,否则有可能主程序退出了，goroutine还没执行
+    //注意：go语言提供了waitgroup功能，用waitgroup更合适，此处为了简化代码使用sleep
     
     ```
 
@@ -65,6 +66,25 @@ var ch  = make(chan int,2)
       
       cj <- 3
       time.Sleep(1*time.Second) //等待子goroutine执行完,否则有可能主程序退出了，goroutine还没执行
+      
+      ```
+
+   2. 如果指定了长度，那么在写满之前，写入操作不会被阻塞，读取只有在没有数据时阻塞，只要有数据就可以读取，显然，指定长度对**写入**有影响，对读取无影响。
+
+      ```go
+      ch := make(chan int,1)
+      go func (c chan int) {
+          a := <-c
+          fmt.Println(a)
+      }(ch)
+      ch <- 1
+      fmt.Println(2)//因为ch <-1没有阻塞，所以里面执行了打印操作，之后才执行goroutine
+      time.Sleep(1*time.Second) //等待子goroutine执行完,否则有可能主程序退出了，goroutine还没执行
+      
+      /*结果
+      2
+      1
+      */
       
       ```
 

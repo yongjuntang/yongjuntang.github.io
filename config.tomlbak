@@ -1,0 +1,4 @@
+baseURL = 'http://vpn2.tangyj.name/'
+languageCode = 'en-us'
+title = '汤永军的个人博客'
+theme = "even"
