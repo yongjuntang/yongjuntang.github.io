@@ -2,6 +2,7 @@
 title: "iTerm2遇到的问题"
 date: 2021-11-29T15:35:28+08:00
 draft: true
+categories: "iTerm2"
 ---
 
 1. 无法复制的问题

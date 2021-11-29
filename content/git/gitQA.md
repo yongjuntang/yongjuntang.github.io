@@ -2,6 +2,7 @@
 title: "git常见问题"
 date: 2021-11-29T01:19:07-05:00
 draft: false
+categories: "git"
 ---
 
 1. 如何保存用户名和密码，避免每次git push都需要用户名和密码
