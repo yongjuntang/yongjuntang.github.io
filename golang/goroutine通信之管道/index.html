@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Goroutine通信之管道 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tangyj" /><meta name="description" content="goroutine间通信是通过channel来实现的 定义：var ch chan 变量类型 初始化： ch = make(chan 变量类型 [,chansize]) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 var ch chan int var ch2" /><meta name="keywords" content="Hugo, tangyj" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.89.4 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/golang/goroutine%E9%80%9A%E4%BF%A1%E4%B9%8B%E7%AE%A1%E9%81%93/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Goroutine通信之管道" />
+<meta property="og:description" content="goroutine间通信是通过channel来实现的 定义：var ch chan 变量类型 初始化： ch = make(chan 变量类型 [,chansize]) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 var ch chan int var ch2" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/golang/goroutine%E9%80%9A%E4%BF%A1%E4%B9%8B%E7%AE%A1%E9%81%93/" /><meta property="article:section" content="golang" />
+<meta property="article:published_time" content="2021-11-29T15:58:11+08:00" />
+<meta property="article:modified_time" content="2021-11-29T15:58:11+08:00" />
+
+<meta itemprop="name" content="Goroutine通信之管道">
+<meta itemprop="description" content="goroutine间通信是通过channel来实现的 定义：var ch chan 变量类型 初始化： ch = make(chan 变量类型 [,chansize]) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 var ch chan int var ch2"><meta itemprop="datePublished" content="2021-11-29T15:58:11+08:00" />
+<meta itemprop="dateModified" content="2021-11-29T15:58:11+08:00" />
+<meta itemprop="wordCount" content="827">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Goroutine通信之管道"/>
+<meta name="twitter:description" content="goroutine间通信是通过channel来实现的 定义：var ch chan 变量类型 初始化： ch = make(chan 变量类型 [,chansize]) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 var ch chan int var ch2"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/golang/">
+        <li class="mobile-menu-item">Golang</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/golang/">Golang</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <blockquote>
+<p>goroutine间通信是通过channel来实现的</p>
+</blockquote>
+<ul>
+<li>定义：var ch chan 变量类型</li>
+<li>初始化： ch = make(chan 变量类型  [,chansize])</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go">
+<span class="kd">var</span> <span class="nx">ch</span> <span class="kd">chan</span> <span class="kt">int</span>
+<span class="kd">var</span> <span class="nx">ch2</span> <span class="kd">chan</span> <span class="kt">string</span>
+<span class="kd">var</span> <span class="nx">ch3</span> <span class="kd">chan</span> <span class="p">[]</span><span class="kt">byte</span>
+<span class="kd">var</span> <span class="nx">ch4</span> <span class="kd">chan</span> <span class="p">[][]</span><span class="kt">byte</span>
+
+<span class="nx">ch</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">)</span>
+<span class="nx">ch</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="nx">ch2</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">)</span>
+<span class="nx">ch4</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="p">[][]</span><span class="kt">byte</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1">//3个[]byte切片
+</span><span class="c1"></span>
+<span class="nx">也可以把定义和初始化合起来</span>
+<span class="kd">var</span> <span class="nx">ch</span>  <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>指定管道的方向</p>
+<ul>
+<li>
+<p>写入管道：ch &lt;- 10 : 将10写入管道变量ch</p>
+</li>
+<li>
+<p>读取管道：&lt;- ch :将数据从管道变量ch中读取</p>
+<blockquote>
+<p>记忆要点：因为go里只有&quot;&lt;-&quot;,没有&quot;-&gt;&quot;,所以只要记住&lt;-在关键字chan的哪边，就可以确定读取还是写入管道</p>
+<ul>
+<li>&lt;-在chan左边：读取管道</li>
+<li>&lt;-在chan右边：写入管道</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">ch</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">)</span> <span class="c1">//没有指定方向，既可以写入也可以读取
+</span><span class="c1"></span><span class="k">go</span> <span class="kd">func</span> <span class="p">(</span><span class="nx">c</span> <span class="o">&lt;-</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">){</span><span class="c1">//读取管道
+</span><span class="c1"></span>    <span class="c1">//c&lt;-10  //报错，c是读取管道，不能写数据
+</span><span class="c1"></span>    <span class="nx">a</span> <span class="o">:=</span> <span class="o">&lt;-</span> <span class="nx">c</span> <span class="c1">//读取数据
+</span><span class="c1"></span>    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+<span class="p">}(</span><span class="nx">ch</span><span class="p">)</span>
+
+<span class="nx">a</span><span class="o">&lt;-</span><span class="mi">2</span> <span class="c1">//写入数据
+</span><span class="c1"></span><span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span> <span class="c1">//等待子goroutine执行完,否则有可能主程序退出了，goroutine还没执行
+</span><span class="c1">//注意：go语言提供了waitgroup功能，用waitgroup更合适，此处为了简化代码使用sleep
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>管道的属性</p>
+<ol>
+<li>
+<p>没有指定长度的channel默认是阻塞的，必须有读的，有写的才能完成数据传递。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">ch</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">)</span>
+<span class="k">go</span> <span class="kd">func</span> <span class="p">(</span><span class="nx">c</span> <span class="kd">chan</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">a</span> <span class="o">:=</span> <span class="o">&lt;-</span> <span class="nx">c</span> <span class="c1">//执行到这里的时候，被阻塞
+</span><span class="c1"></span>    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+<span class="p">}(</span><span class="nx">ch</span><span class="p">)</span>
+
+<span class="nx">cj</span> <span class="o">&lt;-</span> <span class="mi">3</span>
+<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span> <span class="c1">//等待子goroutine执行完,否则有可能主程序退出了，goroutine还没执行
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>如果指定了长度，那么在写满之前，写入操作不会被阻塞，读取只有在没有数据时阻塞，只要有数据就可以读取，显然，指定长度对<strong>写入</strong>有影响，对读取无影响。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">ch</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">go</span> <span class="kd">func</span> <span class="p">(</span><span class="nx">c</span> <span class="kd">chan</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">a</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">c</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+<span class="p">}(</span><span class="nx">ch</span><span class="p">)</span>
+<span class="nx">ch</span> <span class="o">&lt;-</span> <span class="mi">1</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="c1">//因为ch &lt;-1没有阻塞，所以里面执行了打印操作，之后才执行goroutine
+</span><span class="c1"></span><span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span> <span class="c1">//等待子goroutine执行完,否则有可能主程序退出了，goroutine还没执行
+</span><span class="c1"></span>
+<span class="cm">/*结果
+</span><span class="cm">2
+</span><span class="cm">1
+</span><span class="cm">*/</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+</li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>tangyj</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
