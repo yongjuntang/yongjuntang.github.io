@@ -1,4 +1,4 @@
 baseURL = 'http://vpn2.tangyj.name/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = '汤永军的个人博客'
 theme = "ananke"
