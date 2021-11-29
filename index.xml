@@ -6,7 +6,16 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Nov 2021 07:44:59 -0500</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Nov 2021 01:19:07 -0500</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git常见问题</title>
+      <link>http://example.org/post/gitqa/</link>
+      <pubDate>Mon, 29 Nov 2021 01:19:07 -0500</pubDate>
+      
+      <guid>http://example.org/post/gitqa/</guid>
+      <description>git创建问题  如何保存用户名和密码，避免每次git push都需要用户名和密码  git config credential.helper store git push #此时输入用户名和密码，用户名和密码就被保存到本地硬盘上了，之后就不需要再次输入用户名和密码了，但是用户名和密码是以明文保存的，如果有安全疑虑，还是手动输入用户名和密码更合适 </description>
+    </item>
+    
     <item>
       <title>Hello</title>
       <link>http://example.org/post/hello/</link>
