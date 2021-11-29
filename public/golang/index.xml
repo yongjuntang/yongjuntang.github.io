@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Even - A super concise theme for Hugo</description>
+    <title>Golangs on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/golang/</link>
+    <description>Recent content in Golangs on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 29 Nov 2021 21:09:58 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Nov 2021 21:09:58 +0800</lastBuildDate><atom:link href="http://localhost:1313/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>管道的应用</title>
       <link>http://localhost:1313/golang/%E7%AE%A1%E9%81%93%E7%9A%84%E5%BA%94%E7%94%A8/</link>
@@ -32,33 +32,6 @@
       
       <guid>http://localhost:1313/golang/goroutine%E9%80%9A%E4%BF%A1%E4%B9%8B%E7%AE%A1%E9%81%93/</guid>
       <description>goroutine间通信是通过channel来实现的 定义：var ch chan 变量类型 初始化： ch = make(chan 变量类型 [,chansize]) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 var ch chan int var ch2</description>
-    </item>
-    
-    <item>
-      <title>iTerm2遇到的问题</title>
-      <link>http://localhost:1313/iterm2/iterm2qa/</link>
-      <pubDate>Mon, 29 Nov 2021 15:35:28 +0800</pubDate>
-      
-      <guid>http://localhost:1313/iterm2/iterm2qa/</guid>
-      <description>无法复制的问题 iTerm2突然不能用鼠标复制文本了，网上搜也没有搜到结果，重置配置后，再次遇到了这个问题，但是这次在选中文本时，最上方提示了</description>
-    </item>
-    
-    <item>
-      <title>git常见问题</title>
-      <link>http://localhost:1313/git/gitqa/</link>
-      <pubDate>Mon, 29 Nov 2021 01:19:07 -0500</pubDate>
-      
-      <guid>http://localhost:1313/git/gitqa/</guid>
-      <description>如何保存用户名和密码，避免每次git push都需要用户名和密码 1 2 git config credential.helper store git push #此时输入用户名和密码，用户名和密码就被保存到本地硬盘上了，之</description>
-    </item>
-    
-    <item>
-      <title>Hello</title>
-      <link>http://localhost:1313/post/hello/</link>
-      <pubDate>Fri, 26 Nov 2021 07:44:59 -0500</pubDate>
-      
-      <guid>http://localhost:1313/post/hello/</guid>
-      <description>Hello,this is my first post on github.io.</description>
     </item>
     
   </channel>

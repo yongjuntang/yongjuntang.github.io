@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iTerm2 on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/categories/iterm2/</link>
+    <description>Recent content in iTerm2 on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 29 Nov 2021 15:35:28 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/iterm2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iTerm2遇到的问题</title>
+      <link>http://localhost:1313/iterm2/iterm2qa/</link>
+      <pubDate>Mon, 29 Nov 2021 15:35:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/iterm2/iterm2qa/</guid>
+      <description>无法复制的问题 iTerm2突然不能用鼠标复制文本了，网上搜也没有搜到结果，重置配置后，再次遇到了这个问题，但是这次在选中文本时，最上方提示了</description>
+    </item>
+    
+  </channel>
+</rss>
