@@ -1,0 +1,49 @@
+Start building sites … 
+hugo v0.89.4-AB01BA6E+extended linux/amd64 BuildDate=2021-11-17T08:24:09Z VendorInfo=gohugoio
+
+                   | EN  
+-------------------+-----
+  Pages            | 11  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     |  1  
+  Processed images |  0  
+  Aliases          |  1  
+  Sitemaps         |  1  
+  Cleaned          |  0  
+
+Built in 149 ms
+Watching for changes in /root/blog/{archetypes,content,data,layouts,static,themes}
+Watching for config changes in /root/blog/config.toml, /root/blog/themes/ananke/config.yaml
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+Start building sites … 
+hugo v0.89.4-AB01BA6E+extended linux/amd64 BuildDate=2021-11-17T08:24:09Z VendorInfo=gohugoio
+
+                   | EN  
+-------------------+-----
+  Pages            | 11  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     |  1  
+  Processed images |  0  
+  Aliases          |  1  
+  Sitemaps         |  1  
+  Cleaned          |  0  
+
+Built in 146 ms
+Watching for changes in /root/blog/{archetypes,content,data,layouts,static,themes}
+Watching for config changes in /root/blog/config.toml, /root/blog/themes/ananke/config.yaml
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+
+Change detected, rebuilding site.
+2021-11-29 15:27:06.836 +0800
+Source changed "/root/blog/content/post/gitQA.md": WRITE
+Total in 7 ms
