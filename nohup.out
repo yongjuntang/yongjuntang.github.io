@@ -51,3 +51,13 @@ Total in 7 ms
 Change of config file detected, rebuilding site.
 2021-11-29 15:27:52.837 +0800
 Rebuilt in 223 ms
+
+Change detected, rebuilding site.
+2021-11-29 15:35:28.837 +0800
+Source changed "/root/blog/content/post/iTerm2QA.md": WRITE
+Total in 12 ms
+
+Change detected, rebuilding site.
+2021-11-29 15:41:31.337 +0800
+Source changed "/root/blog/content/post/iTerm2QA.md": WRITE
+Total in 20 ms
