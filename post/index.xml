@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+<<<<<<< HEAD
     <title>Posts on Even - A super concise theme for Hugo</title>
     <link>http://localhost:1313/post/</link>
     <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
@@ -14,6 +15,32 @@
       
       <guid>http://localhost:1313/post/hello/</guid>
       <description>Hello,this is my first post on github.io.</description>
+=======
+    <title>Posts on My New Hugo Site</title>
+    <link>http://vpn2.tangyj.name/post/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Nov 2021 01:19:07 -0500</lastBuildDate><atom:link href="http://vpn2.tangyj.name/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git常见问题</title>
+      <link>http://vpn2.tangyj.name/post/gitqa/</link>
+      <pubDate>Mon, 29 Nov 2021 01:19:07 -0500</pubDate>
+      
+      <guid>http://vpn2.tangyj.name/post/gitqa/</guid>
+      <description> 如何保存用户名和密码，避免每次git push都需要用户名和密码  git config credential.helper store git push #此时输入用户名和密码，用户名和密码就被保存到本地硬盘上了，之后就不需要再次输入用户名和密码了，但是用户名和密码是以明文保存的，如果有安全疑虑，还是手动输入用户名和密码更合适 如何把之前删除并提交到远程仓库的文件或者目录恢复  git log --diff-filter=D --summary #会列出之前涉及到删除文件操作的提交，并列出具体删除的文件 git checkout d14bca5951e9c~1 要恢复的文件或者目录 # d14bca5951e9c是上一步列出的删除提交的git提交编号，~1是更早一次提交,这样就可以恢复对应的文件了 </description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>http://vpn2.tangyj.name/post/hello/</link>
+      <pubDate>Fri, 26 Nov 2021 07:44:59 -0500</pubDate>
+      
+      <guid>http://vpn2.tangyj.name/post/hello/</guid>
+      <description>hello  I&amp;rsquo;a tangyj
+ 	int a = b; title  ok
+  aaa  AAA AAA   bbb  BBB BBB   ccc  CCC CCC    </description>
+>>>>>>> f7699f7f37d2563f1b6044ce26e75eae3feadc5f
     </item>
     
   </channel>
