@@ -61,3 +61,8 @@ Change detected, rebuilding site.
 2021-11-29 15:41:31.337 +0800
 Source changed "/root/blog/content/post/iTerm2QA.md": WRITE
 Total in 20 ms
+
+Change detected, rebuilding site.
+2021-11-29 15:44:37.337 +0800
+Source changed "/root/blog/content/post/hello.md": WRITE
+Total in 12 ms
