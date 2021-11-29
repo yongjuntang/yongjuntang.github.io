@@ -47,3 +47,7 @@ Change detected, rebuilding site.
 2021-11-29 15:27:06.836 +0800
 Source changed "/root/blog/content/post/gitQA.md": WRITE
 Total in 7 ms
+
+Change of config file detected, rebuilding site.
+2021-11-29 15:27:52.837 +0800
+Rebuilt in 223 ms
