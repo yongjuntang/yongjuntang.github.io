@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gits on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/git/</link>
+    <description>Recent content in Gits on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 29 Nov 2021 01:19:07 -0500</lastBuildDate><atom:link href="http://localhost:1313/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git常见问题</title>
+      <link>http://localhost:1313/git/gitqa/</link>
+      <pubDate>Mon, 29 Nov 2021 01:19:07 -0500</pubDate>
+      
+      <guid>http://localhost:1313/git/gitqa/</guid>
+      <description>如何保存用户名和密码，避免每次git push都需要用户名和密码 1 2 git config credential.helper store git push #此时输入用户名和密码，用户名和密码就被保存到本地硬盘上了，之</description>
+    </item>
+    
+  </channel>
+</rss>
