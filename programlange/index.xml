@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ProgramLanges on 汤永军的个人博客</title>
+    <link>http://vpn2.tangyj.name/programlange/</link>
+    <description>Recent content in ProgramLanges on 汤永军的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Nov 2021 15:58:11 +0800</lastBuildDate><atom:link href="http://vpn2.tangyj.name/programlange/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Goroutine简介</title>
+      <link>http://vpn2.tangyj.name/programlange/golang/goroutine%E7%9A%84%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Mon, 29 Nov 2021 15:58:11 +0800</pubDate>
+      
+      <guid>http://vpn2.tangyj.name/programlange/golang/goroutine%E7%9A%84%E7%AE%80%E4%BB%8B/</guid>
+      <description>goroutine简介 goroute是一种轻量级线程，因为不需要操作系统调度，所以性价比很高，一台普通机器可以轻易达到百万个goroutine。
+goroutine语法 go 函数
+例如：
+func T(int a, int b) { fmt.Println(a+b) } go T() //T被放入异步队列,遇到执行点开始执行（不是立马执行) </description>
+    </item>
+    
+    <item>
+      <title>Goroutine通信之管道</title>
+      <link>http://vpn2.tangyj.name/programlange/golang/goroutine%E9%80%9A%E4%BF%A1%E4%B9%8B%E7%AE%A1%E9%81%93/</link>
+      <pubDate>Mon, 29 Nov 2021 15:58:11 +0800</pubDate>
+      
+      <guid>http://vpn2.tangyj.name/programlange/golang/goroutine%E9%80%9A%E4%BF%A1%E4%B9%8B%E7%AE%A1%E9%81%93/</guid>
+      <description>goroutine间通信是通过channel来实现的
+  定义：var ch chan 变量类型 初始化： ch = make(chan 变量类型 [,chansize])  var ch chan int var ch2 chan string var ch3 chan []byte var ch4 chan [][]byte ch = make(chan int) ch = make(chan int,10) ch2 = make(chan string) ch4 = make(chan [][]byte,3) //3个[]byte切片  也可以把定义和初始化合起来 var ch = make(chan int,2)   指定管道的方向
+  写入管道：ch &amp;lt;- 10 : 将10写入管道变量ch
+  读取管道：&amp;lt;- ch :将数据从管道变量ch中读取</description>
+    </item>
+    
+  </channel>
+</rss>

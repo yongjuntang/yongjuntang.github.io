@@ -2,13 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://vpn2.tangyj.name/programlange/golang/goroutine%E7%9A%84%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2021-11-29T15:58:11+08:00</lastmod>
+  </url><url>
+    <loc>http://vpn2.tangyj.name/programlange/golang/goroutine%E9%80%9A%E4%BF%A1%E4%B9%8B%E7%AE%A1%E9%81%93/</loc>
+    <lastmod>2021-11-29T15:58:11+08:00</lastmod>
+  </url><url>
+    <loc>http://vpn2.tangyj.name/programlange/</loc>
+    <lastmod>2021-11-29T15:58:11+08:00</lastmod>
+  </url><url>
+    <loc>http://vpn2.tangyj.name/</loc>
+    <lastmod>2021-11-29T15:58:11+08:00</lastmod>
+  </url><url>
     <loc>http://vpn2.tangyj.name/post/iterm2qa/</loc>
     <lastmod>2021-11-29T15:35:28+08:00</lastmod>
   </url><url>
     <loc>http://vpn2.tangyj.name/post/</loc>
-    <lastmod>2021-11-29T15:35:28+08:00</lastmod>
-  </url><url>
-    <loc>http://vpn2.tangyj.name/</loc>
     <lastmod>2021-11-29T15:35:28+08:00</lastmod>
   </url><url>
     <loc>http://vpn2.tangyj.name/post/gitqa/</loc>
@@ -16,6 +25,8 @@
   </url><url>
     <loc>http://vpn2.tangyj.name/post/hello/</loc>
     <lastmod>2021-11-26T07:44:59-05:00</lastmod>
+  </url><url>
+    <loc>http://vpn2.tangyj.name/post/untitled/</loc>
   </url><url>
     <loc>http://vpn2.tangyj.name/categories/</loc>
   </url><url>
