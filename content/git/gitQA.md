@@ -17,3 +17,9 @@ git push #此时输入用户名和密码，用户名和密码就被保存到本�
 git log --diff-filter=D --summary   #会列出之前涉及到删除文件操作的提交，并列出具体删除的文件
 git checkout d14bca5951e9c~1 要恢复的文件或者目录   # d14bca5951e9c是上一步列出的删除提交的git提交编号，~1是更早一次提交,这样就可以恢复对应的文件了
 ```
+
+3. 子模块的使用
+
+    [其他教程](https://www.vogella.com/tutorials/GitSubmodules/article.html)
+
+    
