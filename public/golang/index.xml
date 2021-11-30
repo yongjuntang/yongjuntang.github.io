@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+<<<<<<< HEAD
     <title>Golangs on Tangyj&#39;s Personal Blog Site</title>
     <link>http://localhost:1313/golang/</link>
     <description>Recent content in Golangs on Tangyj&#39;s Personal Blog Site</description>
+=======
+    <title>Golangs on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/golang/</link>
+    <description>Recent content in Golangs on Even - A super concise theme for Hugo</description>
+>>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 29 Nov 2021 21:09:58 +0800</lastBuildDate><atom:link href="http://localhost:1313/golang/index.xml" rel="self" type="application/rss+xml" />

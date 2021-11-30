@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef
 <?xml-stylesheet type="text/xsl" href="http://localhost:1313/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+<<<<<<< HEAD
     <loc>http://localhost:1313/categories/</loc>
     <lastmod>2021-11-30T10:19:57+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -39,34 +44,57 @@
   <url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2021-11-30T10:19:57+08:00</lastmod>
+=======
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2021-11-29T21:09:58+08:00</lastmod>
+>>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>http://localhost:1313/hugo/%E6%8B%89%E5%8F%96%E6%88%91%E7%9A%84hugo%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2021-11-30T10:19:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/golang/</loc>
-    <lastmod>2021-11-29T21:09:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+=======
     <loc>http://localhost:1313/golang/</loc>
     <lastmod>2021-11-29T21:09:58+08:00</lastmod>
+>>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
+    <loc>http://localhost:1313/categories/golang/</loc>
+=======
+    <loc>http://localhost:1313/golang/%E7%AE%A1%E9%81%93%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
+>>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef
+    <lastmod>2021-11-29T21:09:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+<<<<<<< HEAD
+    <loc>http://localhost:1313/golang/</loc>
+    <lastmod>2021-11-29T21:09:58+08:00</lastmod>
+=======
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2021-11-29T15:58:11+08:00</lastmod>
+>>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+<<<<<<< HEAD
     <loc>http://localhost:1313/golang/%E7%AE%A1%E9%81%93%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
     <lastmod>2021-11-29T21:09:58+08:00</lastmod>
+=======
+    <loc>http://localhost:1313/categories/golang/</loc>
+    <lastmod>2021-11-29T15:58:11+08:00</lastmod>
+>>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -141,4 +169,37 @@
     <priority>0.5</priority>
   </url>
   
+<<<<<<< HEAD
 </urlset>
+=======
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>
+=======
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://vpn2.tangyj.name/post/gitqa/</loc>
+    <lastmod>2021-11-29T01:19:07-05:00</lastmod>
+  </url><url>
+    <loc>http://vpn2.tangyj.name/</loc>
+    <lastmod>2021-11-29T01:19:07-05:00</lastmod>
+  </url><url>
+    <loc>http://vpn2.tangyj.name/post/</loc>
+    <lastmod>2021-11-29T01:19:07-05:00</lastmod>
+  </url><url>
+    <loc>http://vpn2.tangyj.name/post/hello/</loc>
+    <lastmod>2021-11-26T07:44:59-05:00</lastmod>
+  </url><url>
+    <loc>http://vpn2.tangyj.name/categories/</loc>
+  </url><url>
+    <loc>http://vpn2.tangyj.name/tags/</loc>
+  </url>
+</urlset>
+>>>>>>> f7699f7f37d2563f1b6044ce26e75eae3feadc5f
+>>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef

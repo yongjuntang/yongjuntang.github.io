@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+<<<<<<< HEAD
     <title>golang on Tangyj&#39;s Personal Blog Site</title>
     <link>http://localhost:1313/categories/golang/</link>
     <description>Recent content in golang on Tangyj&#39;s Personal Blog Site</description>
@@ -16,6 +17,14 @@
       <description>利用零长管道可以创建类似句柄的效果</description>
     </item>
     
+=======
+    <title>golang on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/categories/golang/</link>
+    <description>Recent content in golang on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 29 Nov 2021 15:58:11 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef
     <item>
       <title>Goroutine简介</title>
       <link>http://localhost:1313/golang/goroutine%E7%9A%84%E7%AE%80%E4%BB%8B/</link>
