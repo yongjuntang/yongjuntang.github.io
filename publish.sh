@@ -1,10 +1,8 @@
 #!/bin/sh
 date=$(date "+%Y-%m-%d %H:%M:%S")
-alias proxy="ALL_PROXY=socks5://127.0.0.1:1086"
-proxy /usr/bin/git pull
-echo $?
-if $? == 0 ; then
+ALL_PROXY=socks5://127.0.0.1:1086 /usr/bin/git pull 1>/dev/null 2>&1
+if test $? = 0 ; then
     export ALL_PROXY=socks5://127.0.0.1:1086
 fi
 
-hugo -D && /usr/bin/git add . && /usr/bin/git commit -m "$date" && /usr/bin/git pull && echo "0\n" && /usr/bin/git push && echo "1\n"&& git subtree push --prefix public origin gh-pages ; echo "ok"
+hugo -D && echo "compile ok\n" && /usr/bin/git add . && echo "git add ok\n" && /usr/bin/git commit -m "$date" && echo "git commit ok\n" && /usr/bin/git pull && echo "git pull ok\n"  && /usr/bin/git push && echo "git push ok\n"&& git subtree push --prefix public origin gh-pages && echo "git subtree push ok" 
