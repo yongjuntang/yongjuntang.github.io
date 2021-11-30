@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on Even - A super concise theme for Hugo</title>
+    <title>hugo on Tangyj&#39;s Personal Blog Site</title>
     <link>http://localhost:1313/categories/hugo/</link>
-    <description>Recent content in hugo on Even - A super concise theme for Hugo</description>
+    <description>Recent content in hugo on Tangyj&#39;s Personal Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 30 Nov 2021 10:19:57 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
