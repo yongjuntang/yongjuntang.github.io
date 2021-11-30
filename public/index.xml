@@ -13,7 +13,7 @@
       <pubDate>Tue, 30 Nov 2021 10:19:57 +0800</pubDate>
       
       <guid>http://localhost:1313/hugo/%E6%8B%89%E5%8F%96%E6%88%91%E7%9A%84hugo%E5%8D%9A%E5%AE%A2/</guid>
-      <description>从github上拉取博客md文件 1 2 ap git clone https://github.com/yongjuntang/yongjuntang.github.io.git blog #ap是代理别名 初始化子模块（hugo 主题是以子模块的形式存在) 1 git submodule init 更新子模块 1 git submodule update 启动</description>
+      <description>从github上拉取博客md文件 1 2 ap git clone https://github.com/yongjuntang/yongjuntang.github.io.git blog #ap是代理别名 进入blog目录 1 cd blog 初始化子模块（hugo 主题是以子模块的形式存在) 1 git submodule init</description>
     </item>
     
     <item>

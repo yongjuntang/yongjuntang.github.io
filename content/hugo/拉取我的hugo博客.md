@@ -2,12 +2,12 @@
 title: "拉取我的hugo博客"
 date: 2021-11-30T10:19:57+08:00
 lastmod: 2021-11-30T10:19:57+08:00
-draft: true
+draft: false
 keywords: []
 description: ""
-tags: []
-categories: []
-author: ""
+tags: ["hugo"]
+categories: ["hugo"]
+author: "tangyj"
 
 # You can also close(false) or open(true) something for this content.
 # P.S. comment can only be closed
@@ -45,22 +45,28 @@ sequenceDiagrams:
     ```
     ap git clone https://github.com/yongjuntang/yongjuntang.github.io.git blog #ap是代理别名			
 
-2. 初始化子模块（hugo 主题是以子模块的形式存在)
+2. 进入blog目录
+
+    ```
+    cd blog
+    ```
+
+3. 初始化子模块（hugo 主题是以子模块的形式存在)
 
     ```
     git submodule init
     ```
 
-3. 更新子模块
+4. 更新子模块
 
     ```
     git submodule update
     ```
 
-4. 启动hugo服务
+5. 启动hugo服务
 
     ```
-    hugo serve -D
+    hugo serve -D  #默认监听1313端口
     ```
 
-    
+6. 在浏览器访问http://localhost:1313
