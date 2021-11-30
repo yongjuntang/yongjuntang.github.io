@@ -2,7 +2,7 @@
 title: "Goroutine简介"
 date: 2021-11-29T15:58:11+08:00
 draft: true
-categories: "golang"
+categories: ["golang"]
 ---
 
 ## goroutine简介

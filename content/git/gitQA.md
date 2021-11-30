@@ -2,7 +2,7 @@
 title: "git常见问题"
 date: 2021-11-29T01:19:07-05:00
 draft: false
-categories: "git"
+categories: ["git"]
 ---
 
 1. 如何保存用户名和密码，避免每次git push都需要用户名和密码
@@ -23,3 +23,4 @@ git checkout d14bca5951e9c~1 要恢复的文件或者目录   # d14bca5951e9c是
     [其他教程](https://www.vogella.com/tutorials/GitSubmodules/article.html)
 
     
+
