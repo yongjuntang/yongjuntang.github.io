@@ -7,7 +7,7 @@ categories: ["golang"]
 
 ## goroutine简介
 
-goroute是一种轻量级线程，因为不需要操作系统调度，所以性价比很高，一台普通机器可以轻易达到百万个goroutine。
+goroute是一种轻量级线程，因为调度不在内核态，而在用户态，发生调度时，不需要切换整个线程上下文，所以性能极高，而且一台普通机器可以轻易达到成千上万个goroutine。
 
 ## goroutine语法
 

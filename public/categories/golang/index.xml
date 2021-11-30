@@ -22,7 +22,7 @@
       <pubDate>Mon, 29 Nov 2021 15:58:11 +0800</pubDate>
       
       <guid>http://localhost:1313/golang/goroutine%E7%9A%84%E7%AE%80%E4%BB%8B/</guid>
-      <description>goroutine简介 goroute是一种轻量级线程，因为不需要操作系统调度，所以性价比很高，一台普通机器可以轻易达到百万个goroutin</description>
+      <description>goroutine简介 goroute是一种轻量级线程，因为调度不在内核态，而在用户态，发生调度时，不需要切换整个线程上下文，所以性能极高，而</description>
     </item>
     
     <item>
