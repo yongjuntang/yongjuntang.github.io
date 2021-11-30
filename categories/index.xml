@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-<<<<<<< HEAD
     <title>Categories on Tangyj&#39;s Personal Blog Site</title>
     <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Tangyj&#39;s Personal Blog Site</description>
@@ -21,19 +20,6 @@
       <title>golang</title>
       <link>http://localhost:1313/categories/golang/</link>
       <pubDate>Mon, 29 Nov 2021 21:09:58 +0800</pubDate>
-=======
-<<<<<<< HEAD
-    <title>Categories on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/categories/</link>
-    <description>Recent content in Categories on Even - A super concise theme for Hugo</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 29 Nov 2021 15:58:11 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>golang</title>
-      <link>http://localhost:1313/categories/golang/</link>
-      <pubDate>Mon, 29 Nov 2021 15:58:11 +0800</pubDate>
->>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef
       
       <guid>http://localhost:1313/categories/golang/</guid>
       <description></description>
@@ -57,15 +43,5 @@
       <description></description>
     </item>
     
-<<<<<<< HEAD
-=======
-=======
-    <title>Categories on My New Hugo Site</title>
-    <link>http://vpn2.tangyj.name/categories/</link>
-    <description>Recent content in Categories on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://vpn2.tangyj.name/categories/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> f7699f7f37d2563f1b6044ce26e75eae3feadc5f
->>>>>>> af7a9652ea0dd3bba2a3e72b4600af4e1e6af1ef
   </channel>
 </rss>
